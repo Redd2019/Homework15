@@ -23,6 +23,11 @@ public abstract class HogwartsStudent {
         this.transgressionDistance = transgressionDistance;
     }
 
+    public boolean compare(HogwartsStudent hogwartsStudent) {
+        return this.magicPower+this.transgressionDistance >
+                hogwartsStudent.magicPower+ hogwartsStudent.transgressionDistance;
+    }
+
     @Override
     public String toString() {
         return "HogwartsStudent{" +

@@ -35,6 +35,14 @@ public class GriffindorStudent extends HogwartsStudent {
         this.courage = courage;
     }
 
+    private int calculateCompositePower() {
+        return this.courage+this.honor+this.nobility;
+    }
+
+    public boolean compare (GriffindorStudent griffindorStudent) {
+        return this.calculateCompositePower() > griffindorStudent.calculateCompositePower();
+    }
+
     @Override
     public String toString() {
         return "GriffindorStudent{" +

@@ -33,6 +33,13 @@ public class RavenClawStudent extends HogwartsStudent{
     public void setCreativity(int creativity) {
         this.creativity = creativity;
     }
+    private int calculateCompositePower() {
+        return this.creativity+this.mind+this.wisdom;
+    }
+
+    public boolean compare (RavenClawStudent ravenClawStudent) {
+        return this.calculateCompositePower() > ravenClawStudent.calculateCompositePower();
+    }
 
     @Override
     public String toString() {

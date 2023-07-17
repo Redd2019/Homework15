@@ -34,6 +34,14 @@ public class HufflepuffStudent extends HogwartsStudent{
         this.honesty = honesty;
     }
 
+    private int calculateCompositePower() {
+        return this.honesty+this.industriousness+this.loyalty;
+    }
+
+    public boolean compare (HufflepuffStudent hufflepuffStudent) {
+        return this.calculateCompositePower() > hufflepuffStudent.calculateCompositePower();
+    }
+
     @Override
     public String toString() {
         return "HufflepuffStudent{" +
