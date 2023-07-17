@@ -5,9 +5,9 @@ public class SlytherinStudent extends HogwartsStudent {
     private int resourcefulness;
     private int lustForPower;
 
-    public SlytherinStudent(int magicPower, int transgressionDistance, int cunning, int determination, int ambition,
+    public SlytherinStudent(String name, int magicPower, int transgressionDistance, int cunning, int determination, int ambition,
                             int resourcefulness, int lustForPower) {
-        super(magicPower, transgressionDistance);
+        super(name,magicPower, transgressionDistance);
         this.cunning = cunning;
         this.determination = determination;
         this.ambition = ambition;
@@ -59,8 +59,12 @@ public class SlytherinStudent extends HogwartsStudent {
         return this.ambition+this.cunning+this.determination+this.lustForPower+this.resourcefulness;
     }
 
-    public boolean compare (SlytherinStudent slytherinStudent) {
-        return this.calculateCompositePower() > slytherinStudent.calculateCompositePower();
+    public void compare (SlytherinStudent slytherinStudent) {
+        if (this.calculateCompositePower() > slytherinStudent.calculateCompositePower()) {
+            System.out.println(this.getName() + " лучший Слизеринец, чем " + slytherinStudent.getName());
+        }else {
+            System.out.println(slytherinStudent.getName() + " лучший Слизеринец, чем " + this.getName());
+        }
     }
 
     @Override

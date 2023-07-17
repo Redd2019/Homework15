@@ -4,8 +4,8 @@ public class GriffindorStudent extends HogwartsStudent {
     private int honor;
     private int courage;
 
-    public GriffindorStudent(int magicPower, int transgressionDistance, int nobility, int honor, int courage) {
-        super(magicPower, transgressionDistance);
+    public GriffindorStudent(String name, int magicPower, int transgressionDistance, int nobility, int honor, int courage) {
+        super(name, magicPower, transgressionDistance);
         this.nobility = nobility;
         this.honor = honor;
         this.courage = courage;
@@ -39,8 +39,13 @@ public class GriffindorStudent extends HogwartsStudent {
         return this.courage+this.honor+this.nobility;
     }
 
-    public boolean compare (GriffindorStudent griffindorStudent) {
-        return this.calculateCompositePower() > griffindorStudent.calculateCompositePower();
+
+    public void compare (GriffindorStudent griffindorStudent) {
+        if (this.calculateCompositePower() > griffindorStudent.calculateCompositePower()) {
+            System.out.println(this.getName() + " лучший Гриффиндорец, чем " + griffindorStudent.getName());
+        }else {
+            System.out.println(griffindorStudent.getName() + " лучший Гриффиндорец, чем " + this.getName());
+        }
     }
 
     @Override

@@ -3,8 +3,8 @@ public class HufflepuffStudent extends HogwartsStudent{
     private int loyalty;
     private int honesty;
 
-    public HufflepuffStudent(int magicPower, int transgressionDistance, int industriousness, int loyalty, int honesty) {
-        super(magicPower, transgressionDistance);
+    public HufflepuffStudent(String name, int magicPower, int transgressionDistance, int industriousness, int loyalty, int honesty) {
+        super(name,magicPower, transgressionDistance);
         this.industriousness = industriousness;
         this.loyalty = loyalty;
         this.honesty = honesty;
@@ -38,8 +38,12 @@ public class HufflepuffStudent extends HogwartsStudent{
         return this.honesty+this.industriousness+this.loyalty;
     }
 
-    public boolean compare (HufflepuffStudent hufflepuffStudent) {
-        return this.calculateCompositePower() > hufflepuffStudent.calculateCompositePower();
+    public void compare (HufflepuffStudent hufflepuffStudent) {
+        if (this.calculateCompositePower() > hufflepuffStudent.calculateCompositePower()) {
+            System.out.println(this.getName() + " лучший Пуффендуец, чем " + hufflepuffStudent.getName());
+        }else {
+            System.out.println(hufflepuffStudent.getName() + " лучший Пуффендуец, чем " + this.getName());
+        }
     }
 
     @Override

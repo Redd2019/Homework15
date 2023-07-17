@@ -3,8 +3,8 @@ public class RavenClawStudent extends HogwartsStudent{
     private int wisdom;
     private int creativity;
 
-    public RavenClawStudent(int magicPower, int transgressionDistance, int mind, int wisdom, int creativity) {
-        super(magicPower, transgressionDistance);
+    public RavenClawStudent(String name, int magicPower, int transgressionDistance, int mind, int wisdom, int creativity) {
+        super(name,magicPower, transgressionDistance);
         this.mind = mind;
         this.wisdom = wisdom;
         this.creativity = creativity;
@@ -37,8 +37,12 @@ public class RavenClawStudent extends HogwartsStudent{
         return this.creativity+this.mind+this.wisdom;
     }
 
-    public boolean compare (RavenClawStudent ravenClawStudent) {
-        return this.calculateCompositePower() > ravenClawStudent.calculateCompositePower();
+    public void compare (RavenClawStudent ravenClawStudent) {
+        if (this.calculateCompositePower() > ravenClawStudent.calculateCompositePower()) {
+            System.out.println(this.getName() + " лучший Когтевранец, чем " + ravenClawStudent.getName());
+        }else {
+            System.out.println(ravenClawStudent.getName() + " лучший Когтевранец, чем " + this.getName());
+        }
     }
 
     @Override
