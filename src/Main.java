@@ -22,5 +22,8 @@ public class Main {
         grahamMontagu.compare(cedricDiggory);
         zachariasSmith.compare(padmaPatil);
         zhouChang.compare(marcusBelby);
+        dracoMalfoy.compare(gregoryGoyle);
+        cedricDiggory.compare(zachariasSmith);
+
     }
 }
